@@ -37,7 +37,7 @@ class MenuScene: SKScene {
             if node == easyButton {
                 let transition = SKTransition.fade(withDuration: 1)
                 let scene = GameScene(size: self.size)
-                scene.monsterSpeed = CGFloat.random(in: 1.3...3.5)
+                scene.monsterSpeed = 1.3...3.6
                 scene.musicString = "bgMusicEasy"
                 scene.durationToWait = 1.4
                 
@@ -46,7 +46,7 @@ class MenuScene: SKScene {
             } else if node == hardButton {
                 let transition = SKTransition.fade(withDuration: 1)
                 let scene = GameScene(size: self.size)
-                scene.monsterSpeed = CGFloat.random(in: 0.7...2.0)
+                scene.monsterSpeed = 0.7...1.8
                 scene.musicString = "bgMusicHard"
                 scene.durationToWait = 4.0
                 

@@ -23,7 +23,7 @@ class GameScene: SKScene {
     
     var gameOver = false
     
-    var monsterSpeed = CGFloat.random(in: 1.3...3.5)
+    var monsterSpeed: ClosedRange<CGFloat> = 1.3...3.5
     
     var musicString = String()
     
@@ -37,7 +37,6 @@ class GameScene: SKScene {
     }
     
     private func configBackground() {
-        backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         let backgroundMusic = SKAudioNode(fileNamed: musicString)
         backgroundMusic.autoplayLooped = true
         addChild(backgroundMusic)
@@ -53,10 +52,10 @@ class GameScene: SKScene {
         scoreLabel.text = "Score: 0"
         scoreLabel.position = CGPoint(x: 650 , y: 380)
         scoreLabel.fontSize = 20
-        
         scoreLabel.fontColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        addChild(scoreLabel)
         scoreLabel.zPosition = 1
+        addChild(scoreLabel)
+       
     }
     
     private func configPhysicsWorld() {
@@ -70,9 +69,10 @@ class GameScene: SKScene {
         createEndlessMonsterSpawn()
         configBackground()
         configScoreLabel()
+        print(monsterSpeed)
     }
     
-    func addEnemy() {
+    private func addEnemy() {
         let enemy = SKSpriteNode(imageNamed: "monster")
         enemy.physicsBody = SKPhysicsBody(rectangleOf: enemy.size)
         enemy.physicsBody?.isDynamic = true
@@ -81,11 +81,12 @@ class GameScene: SKScene {
         enemy.physicsBody?.collisionBitMask = PhysicsCategory.none
         let y_axisSpawn = CGFloat.random(in: enemy.size.height/2...size.height - enemy.size.height/2)
         enemy.position = CGPoint(x: size.width + enemy.size.width/2, y: y_axisSpawn)
-        addChild(enemy)
         enemy.zPosition = 1
+        addChild(enemy)
+        
         let randomDuration = monsterSpeed
         let actionMove = SKAction.move(to: CGPoint(x: -enemy.size.width/2, y: y_axisSpawn),
-                                       duration: TimeInterval(randomDuration))
+                                       duration: TimeInterval(CGFloat.random(in: monsterSpeed)))
         let actionMoveDone = SKAction.removeFromParent()
         
         let loseAction = SKAction.run() { [weak self] in
@@ -135,7 +136,7 @@ class GameScene: SKScene {
         run(SKAction.playSoundFileNamed("bark.wav", waitForCompletion: false))
     }
     
-    func projectileDidCollideWithMonster(projectile: SKSpriteNode, monster: SKSpriteNode) {
+   private func projectileDidCollideWithMonster(projectile: SKSpriteNode, monster: SKSpriteNode) {
         [projectile, monster].forEach{$0.removeFromParent()}
         run(SKAction.playSoundFileNamed("hit.wav", waitForCompletion: false))
         score += 1
