@@ -12,28 +12,47 @@ import SpriteKit
 
 class MenuScene: SKScene {
     
-    var playButton = SKSpriteNode()
-    var playButtonTexture = SKTexture(imageNamed: "play")
+    var easyButton = SKSpriteNode()
+    var easyButtonTexture = SKTexture(imageNamed: "easy")
+    
+    var hardButton = SKSpriteNode()
+    var hardButtonTexture = SKTexture(imageNamed: "hard")
     
     override func didMove(to view: SKView) {
         backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        playButton = SKSpriteNode(texture: playButtonTexture)
-        playButton.position = CGPoint(x: frame.midX, y: frame.midY)
-        addChild(playButton)
+        easyButton = SKSpriteNode(texture: easyButtonTexture)
+        easyButton.position = CGPoint(x: frame.midX, y: frame.midY + 50)
+        addChild(easyButton)
+        
+        hardButton = SKSpriteNode(texture: hardButtonTexture)
+        hardButton.position = CGPoint(x: frame.midX, y: frame.midY - 50)
+        hardButton.setScale(0.5)
+        addChild(hardButton)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            if let touch = touches.first {
-                let pos = touch.location(in: self)
-                let node = self.atPoint(pos)
-
-                if node == playButton {
-                    if let view = view {
-                        let transition:SKTransition = SKTransition.fade(withDuration: 1)
-                        let scene:SKScene = GameScene(size: self.size)
-                        self.view?.presentScene(scene, transition: transition)
-                    }
-                }
+        if let touch = touches.first {
+            let pos = touch.location(in: self)
+            let node = self.atPoint(pos)
+            
+            if node == easyButton {
+                let transition = SKTransition.fade(withDuration: 1)
+                let scene = GameScene(size: self.size)
+                scene.monsterSpeed = CGFloat.random(in: 1.3...3.5)
+                scene.musicString = "bgMusicEasy"
+                scene.durationToWait = 1.4
+                
+                self.view?.presentScene(scene, transition: transition)
+                
+            } else if node == hardButton {
+                let transition = SKTransition.fade(withDuration: 1)
+                let scene = GameScene(size: self.size)
+                scene.monsterSpeed = CGFloat.random(in: 0.7...2.0)
+                scene.musicString = "bgMusicHard"
+                scene.durationToWait = 4.0
+                
+                self.view?.presentScene(scene, transition: transition)
             }
         }
     }
+}
 

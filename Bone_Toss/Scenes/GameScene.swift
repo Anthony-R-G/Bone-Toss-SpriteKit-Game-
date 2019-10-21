@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 import SpriteKit
 
@@ -22,6 +23,13 @@ class GameScene: SKScene {
     
     var gameOver = false
     
+    var monsterSpeed = CGFloat.random(in: 1.3...3.5)
+    
+    var musicString = String()
+    
+    var durationToWait = Double()
+    
+    
     private func setPlayer() {
         player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
         addChild(player)
@@ -30,7 +38,7 @@ class GameScene: SKScene {
     
     private func configBackground() {
         backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        let backgroundMusic = SKAudioNode(fileNamed: "bgmusic")
+        let backgroundMusic = SKAudioNode(fileNamed: musicString)
         backgroundMusic.autoplayLooped = true
         addChild(backgroundMusic)
         
@@ -43,7 +51,7 @@ class GameScene: SKScene {
     private func configScoreLabel() {
         scoreLabel = SKLabelNode(fontNamed: "Monster Friend Fore")
         scoreLabel.text = "Score: 0"
-        scoreLabel.position = CGPoint(x: 750 , y: 380)
+        scoreLabel.position = CGPoint(x: 650 , y: 380)
         scoreLabel.fontSize = 20
         
         scoreLabel.fontColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -75,7 +83,7 @@ class GameScene: SKScene {
         enemy.position = CGPoint(x: size.width + enemy.size.width/2, y: y_axisSpawn)
         addChild(enemy)
         enemy.zPosition = 1
-        let randomDuration = CGFloat.random(in: 1.3...3.3) //1.3...3.5 & 0.7...2.0
+        let randomDuration = monsterSpeed
         let actionMove = SKAction.move(to: CGPoint(x: -enemy.size.width/2, y: y_axisSpawn),
                                        duration: TimeInterval(randomDuration))
         let actionMoveDone = SKAction.removeFromParent()
@@ -85,9 +93,9 @@ class GameScene: SKScene {
             let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
             let gameOverScene = GameOverScene(size: self.size, won: false)
             self.view?.presentScene(gameOverScene, transition: reveal)
-       
         }
-        enemy.run(SKAction.sequence([SKAction.wait(forDuration: 1.4),actionMove,loseAction,
+        
+        enemy.run(SKAction.sequence([SKAction.wait(forDuration: durationToWait), actionMove, loseAction,
                       SKAction.playSoundFileNamed("laugh.wav", waitForCompletion: false), actionMoveDone]))
     }
     

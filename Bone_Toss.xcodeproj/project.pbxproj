@@ -15,10 +15,10 @@
 		97DAA03923443CAA00F38048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97DAA03723443CAA00F38048 /* LaunchScreen.storyboard */; };
 		97DAA04223443D1700F38048 /* bark.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97DAA04123443D1700F38048 /* bark.wav */; };
 		97DAA04823443D2C00F38048 /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97DAA04323443D2C00F38048 /* hit.wav */; };
-		97DAA04923443D2C00F38048 /* bgmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97DAA04423443D2C00F38048 /* bgmusic.mp3 */; };
+		97DAA04923443D2C00F38048 /* bgMusicEasy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97DAA04423443D2C00F38048 /* bgMusicEasy.mp3 */; };
 		97DAA04A23443D2C00F38048 /* gameWon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97DAA04523443D2C00F38048 /* gameWon.wav */; };
 		97DAA04B23443D2C00F38048 /* laugh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97DAA04623443D2C00F38048 /* laugh.wav */; };
-		97DAA04C23443D2C00F38048 /* bgmusicHard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97DAA04723443D2C00F38048 /* bgmusicHard.mp3 */; };
+		97DAA04C23443D2C00F38048 /* bgMusicHard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97DAA04723443D2C00F38048 /* bgMusicHard.mp3 */; };
 		97DAA04F23443D6700F38048 /* Monster.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97DAA04E23443D6700F38048 /* Monster.otf */; };
 		97DAA05123443D7A00F38048 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DAA05023443D7A00F38048 /* GameScene.swift */; };
 		97DAA05323443DA200F38048 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DAA05223443DA200F38048 /* MenuScene.swift */; };
@@ -38,10 +38,10 @@
 		97DAA03A23443CAA00F38048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97DAA04123443D1700F38048 /* bark.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bark.wav; sourceTree = "<group>"; };
 		97DAA04323443D2C00F38048 /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hit.wav; sourceTree = "<group>"; };
-		97DAA04423443D2C00F38048 /* bgmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgmusic.mp3; sourceTree = "<group>"; };
+		97DAA04423443D2C00F38048 /* bgMusicEasy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusicEasy.mp3; sourceTree = "<group>"; };
 		97DAA04523443D2C00F38048 /* gameWon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameWon.wav; sourceTree = "<group>"; };
 		97DAA04623443D2C00F38048 /* laugh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laugh.wav; sourceTree = "<group>"; };
-		97DAA04723443D2C00F38048 /* bgmusicHard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgmusicHard.mp3; sourceTree = "<group>"; };
+		97DAA04723443D2C00F38048 /* bgMusicHard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusicHard.mp3; sourceTree = "<group>"; };
 		97DAA04E23443D6700F38048 /* Monster.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monster.otf; sourceTree = "<group>"; };
 		97DAA05023443D7A00F38048 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		97DAA05223443DA200F38048 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
@@ -102,9 +102,9 @@
 				97DAA04123443D1700F38048 /* bark.wav */,
 				97DAA04323443D2C00F38048 /* hit.wav */,
 				97DAA04623443D2C00F38048 /* laugh.wav */,
-				97DAA04423443D2C00F38048 /* bgmusic.mp3 */,
+				97DAA04423443D2C00F38048 /* bgMusicEasy.mp3 */,
 				97DAA04523443D2C00F38048 /* gameWon.wav */,
-				97DAA04723443D2C00F38048 /* bgmusicHard.mp3 */,
+				97DAA04723443D2C00F38048 /* bgMusicHard.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97DAA04A23443D2C00F38048 /* gameWon.wav in Resources */,
-				97DAA04C23443D2C00F38048 /* bgmusicHard.mp3 in Resources */,
+				97DAA04C23443D2C00F38048 /* bgMusicHard.mp3 in Resources */,
 				97DAA04223443D1700F38048 /* bark.wav in Resources */,
 				97DAA03923443CAA00F38048 /* LaunchScreen.storyboard in Resources */,
 				97DAA04823443D2C00F38048 /* hit.wav in Resources */,
@@ -194,7 +194,7 @@
 				97DAA04F23443D6700F38048 /* Monster.otf in Resources */,
 				97DAA03423443CA800F38048 /* Main.storyboard in Resources */,
 				97DAA04B23443D2C00F38048 /* laugh.wav in Resources */,
-				97DAA04923443D2C00F38048 /* bgmusic.mp3 in Resources */,
+				97DAA04923443D2C00F38048 /* bgMusicEasy.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
