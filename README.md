@@ -2,7 +2,7 @@
 
 Basic game created, using Undertale assets, when learning the basics of SpriteKit. 
 
-Gameplay consists of you, the dog, preventing any evil wizards from reaching the left side of the screen. To do this, tap the screen to fire off a deadly bone that'll delete the evildoer from existence. 
+Gameplay consists of you, the dog, preventing any evil wizards from reaching the left side of the screen. To do this, tap the screen to fire off a deadly bone that'll delete the evildoer from existence. A dog truly is man's best friend.
 
 There are two difficulty levels, easy and hard. Selecting either will adjust the background music, and the speed range at which the wizards move. Scary stuff indeed.
 
