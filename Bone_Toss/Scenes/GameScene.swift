@@ -84,7 +84,6 @@ class GameScene: SKScene {
         enemy.zPosition = 1
         addChild(enemy)
         
-        let randomDuration = monsterSpeed
         let actionMove = SKAction.move(to: CGPoint(x: -enemy.size.width/2, y: y_axisSpawn),
                                        duration: TimeInterval(CGFloat.random(in: monsterSpeed)))
         let actionMoveDone = SKAction.removeFromParent()

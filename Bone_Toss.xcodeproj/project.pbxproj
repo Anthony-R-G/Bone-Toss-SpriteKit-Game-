@@ -61,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97A0A82A24C791B500A899BC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				97DAA03023443CA800F38048 /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		97DAA02023443CA800F38048 = {
 			isa = PBXGroup;
 			children = (
@@ -80,10 +88,10 @@
 		97DAA02B23443CA800F38048 /* Bone_Toss */ = {
 			isa = PBXGroup;
 			children = (
+				97A0A82A24C791B500A899BC /* Controllers */,
 				97DAA04023443CFE00F38048 /* Sounds */,
 				97DAA04D23443D4400F38048 /* Font */,
 				97DAA05A23443E2C00F38048 /* Scenes */,
-				97DAA03023443CA800F38048 /* GameViewController.swift */,
 				97DAA05623443E0100F38048 /* Operator_Overloads.swift */,
 				97DAA05823443E1500F38048 /* PhysicsCategory.swift */,
 				97DAA02E23443CA800F38048 /* SceneDelegate.swift */,

@@ -46,7 +46,7 @@ class MenuScene: SKScene {
             } else if node == hardButton {
                 let transition = SKTransition.fade(withDuration: 1)
                 let scene = GameScene(size: self.size)
-                scene.monsterSpeed = 0.7...1.8
+                scene.monsterSpeed = 0.8...1.9
                 scene.musicString = "bgMusicHard"
                 scene.durationToWait = 4.0
                 
